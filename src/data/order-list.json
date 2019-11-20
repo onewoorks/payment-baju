@@ -1,0 +1,422 @@
+[
+    {
+      "nama": "Abu Zar",
+      "nickname": "BUJA",
+      "no": 12,
+      "size": "S"
+    },
+    {
+      "nama": "AFIQ BIN AHADDIN",
+      "nickname": "AFIQ",
+      "no": 2,
+      "size": "XXL"
+    },
+    {
+      "nama": "Ahmaa Dhiauddin",
+      "nickname": "AHMAA",
+      "no": 3,
+      "size": "L"
+    },
+    {
+      "nama": "AHMAD DANIAL BIN ABD GHANI",
+      "nickname": "DANIAL",
+      "no": 18,
+      "size": "XL"
+    },
+    {
+      "nama": "AHMAD IBRAHIM RIZAL BIN YAHAYA",
+      "nickname": "RIZAL",
+      "no": 75,
+      "size": "XXL"
+    },
+    {
+      "nama": "AHMAD MARWAN BIN SAFWAN ZUBIR",
+      "nickname": "MARWAN",
+      "no": 84,
+      "size": "M"
+    },
+    {
+      "nama": "Ahmad Zikri Bin Muhamad",
+      "nickname": "ZICK",
+      "no": 7,
+      "size": "S"
+    },
+    {
+      "nama": "AKMAL SAUFI BIN MASHAR",
+      "nickname": "AKMAL",
+      "no": 84,
+      "size": "M"
+    },
+    {
+      "nama": "Amir Zaki",
+      "nickname": "BEAR",
+      "no": 24,
+      "size": "6XL"
+    },
+    {
+      "nama": "Asyrafhaziq",
+      "nickname": "HAZIQ",
+      "no": 21,
+      "size": "M"
+    },
+    {
+      "nama": "Azman Mamat",
+      "nickname": "MAN-M",
+      "no": 66,
+      "size": "M"
+    },
+    {
+      "nama": "Azran",
+      "nickname": "AZRAN",
+      "no": 7,
+      "size": "S"
+    },
+    {
+      "nama": "Biksham Sirasavada",
+      "nickname": "SHAM S",
+      "no": 14,
+      "size": "M"
+    },
+    {
+      "nama": "Dato' AMIR SIDDIQIN",
+      "nickname": "A.M.S",
+      "no": 20,
+      "size": "XL"
+    },
+    {
+      "nama": "dauz",
+      "nickname": "DAUZ",
+      "no": 11,
+      "size": "M"
+    },
+    {
+      "nama": "EDZLYZAM",
+      "nickname": "ED",
+      "no": 7,
+      "size": "M"
+    },
+    {
+      "nama": "Fakhrul",
+      "nickname": "AJI",
+      "no": 8,
+      "size": "L"
+    },
+    {
+      "nama": "Farid",
+      "nickname": "FARID",
+      "no": 14,
+      "size": "M"
+    },
+    {
+      "nama": "HARUN HASHIM BIN ISHAK",
+      "nickname": "H.HASHIM",
+      "no": 27,
+      "size": "XL"
+    },
+    {
+      "nama": "Hasif",
+      "nickname": "HASIF",
+      "no": 44,
+      "size": "XL"
+    },
+    {
+      "nama": "Hendra arshad",
+      "nickname": "HENDRA",
+      "no": 1,
+      "size": "XL"
+    },
+    {
+      "nama": "IQBAL",
+      "nickname": "IQBAL F",
+      "no": 55,
+      "size": "L"
+    },
+    {
+      "nama": "IRWAN",
+      "nickname": "IRWAN",
+      "no": 93,
+      "size": "L"
+    },
+    {
+      "nama": "Jotos",
+      "nickname": "JOTOS",
+      "no": 0,
+      "size": "XXL"
+    },
+    {
+      "nama": "khairul safie",
+      "nickname": "KHAIRUL",
+      "no": 23,
+      "size": "M"
+    },
+    {
+      "nama": "Kodishala Vinay",
+      "nickname": "VINAY",
+      "no": 7,
+      "size": "M"
+    },
+    {
+      "nama": "mahadi bin jasman",
+      "nickname": "MAHADI",
+      "no": 73,
+      "size": "L"
+    },
+    {
+      "nama": "Mallareddy Belageri",
+      "nickname": "BELAGERI",
+      "no": 98,
+      "size": "M"
+    },
+    {
+      "nama": "Manga",
+      "nickname": "MANGA",
+      "no": 5,
+      "size": "M"
+    },
+    {
+      "nama": "Melvin",
+      "nickname": "MELVIN",
+      "no": 30,
+      "size": "L"
+    },
+    {
+      "nama": "Mohaimin",
+      "nickname": "MIN Z",
+      "no": 12,
+      "size": "M"
+    },
+    {
+      "nama": "Mohamad Anas",
+      "nickname": "ANAS",
+      "no": 26,
+      "size": "L"
+    },
+    {
+      "nama": "Mohamad Fadzly Bin Ismail",
+      "nickname": "FADZLY",
+      "no": 88,
+      "size": "L"
+    },
+    {
+      "nama": "MOHAMAD HATTA BIN MOHMAD",
+      "nickname": "ATTA",
+      "no": 91,
+      "size": "XL"
+    },
+    {
+      "nama": "Mohd Aizat Bin Yaacob",
+      "nickname": "AIZAT",
+      "no": 3,
+      "size": "XL"
+    },
+    {
+      "nama": "MOHD ASYRAF BIN MOHD ALI",
+      "nickname": "ASYRAF",
+      "no": 86,
+      "size": "L"
+    },
+    {
+      "nama": "Mohd Azhar Tahir",
+      "nickname": "JAHA",
+      "no": 15,
+      "size": "L"
+    },
+    {
+      "nama": "Mohd basri baki bin abd wahab",
+      "nickname": "BAKI",
+      "no": 10,
+      "size": "L"
+    },
+    {
+      "nama": "Mohd Fahmi B M Yacob",
+      "nickname": "FAHMI",
+      "no": 99,
+      "size": "XL"
+    },
+    {
+      "nama": "MOHD FAIZAL BIN MOHD KASIM",
+      "nickname": "MOHD FAIZAL",
+      "no": 22,
+      "size": "M"
+    },
+    {
+      "nama": "Mohd Farhan",
+      "nickname": "FARHAN",
+      "no": 19,
+      "size": "L"
+    },
+    {
+      "nama": "MOHD HAFIZI YAHYA",
+      "nickname": "HAFIZI A",
+      "no": 4,
+      "size": "L"
+    },
+    {
+      "nama": "Mohd Nur Hidayat",
+      "nickname": "HIDAYAT",
+      "no": 28,
+      "size": "L"
+    },
+    {
+      "nama": "Mohd Shamsul",
+      "nickname": "VICMAN",
+      "no": 96,
+      "size": "M"
+    },
+    {
+      "nama": "Mohd syafiq bin abd rahman",
+      "nickname": "SAPIK",
+      "no": 5,
+      "size": "XL"
+    },
+    {
+      "nama": "Mohd Syazwan",
+      "nickname": "WAN",
+      "no": 8,
+      "size": "L"
+    },
+    {
+      "nama": "Mohd Ameer",
+      "nickname": "MOMOC",
+      "no": 77,
+      "size": "XXL"
+    },
+    {
+      "nama": "MUHAMAD HAFIZ SAIDUN",
+      "nickname": "HAFIZ",
+      "no": 11,
+      "size": "M"
+    },
+    {
+      "nama": "MUHAMMAD AMIR",
+      "nickname": "AMIR",
+      "no": 6,
+      "size": "S"
+    },
+    {
+      "nama": "MUHAMMAD ARIFF BIN MD HUSIN",
+      "nickname": "ARIFF",
+      "no": 9,
+      "size": "S"
+    },
+    {
+      "nama": "Muhd Azwandy Bin Ijmaen",
+      "nickname": "WANDY",
+      "no": 25,
+      "size": "S"
+    },
+    {
+      "nama": "Muhammad hafizuddin bin abd rahman sani",
+      "nickname": "HAFIZ",
+      "no": 26,
+      "size": "L"
+    },
+    {
+      "nama": "Mustaqim",
+      "nickname": "MUS",
+      "no": 36,
+      "size": "4XL"
+    },
+    {
+      "nama": "Putet",
+      "nickname": "PUTET",
+      "no": 21,
+      "size": "S"
+    },
+    {
+      "nama": "Putra",
+      "nickname": "PUTRA",
+      "no": 17,
+      "size": "XS"
+    },
+    {
+      "nama": "Radhi",
+      "nickname": "RADHI",
+      "no": 67,
+      "size": "4XL"
+    },
+    {
+      "nama": "S.Subash Ratnam",
+      "nickname": "SUBASH",
+      "no": 8,
+      "size": "L"
+    },
+    {
+      "nama": "Saharman",
+      "nickname": "SAHA",
+      "no": 31,
+      "size": "XL"
+    },
+    {
+      "nama": "Salleh Pahin",
+      "nickname": "SALLEH",
+      "no": 16,
+      "size": "M"
+    },
+    {
+      "nama": "SHAFFUL SHAZWAN BIN SAHAR",
+      "nickname": "SCHA SCHA",
+      "no": 85,
+      "size": "XXL"
+    },
+    {
+      "nama": "Shahril Anuar Ismail",
+      "nickname": "JENAN",
+      "no": 98,
+      "size": "XL"
+    },
+    {
+      "nama": "SHARUDIN ABU SHAH",
+      "nickname": "AD313N",
+      "no": 42,
+      "size": "XL"
+    },
+    {
+      "nama": "Sivakumar Santhakumar",
+      "nickname": "EDI",
+      "no": 9,
+      "size": "M"
+    },
+    {
+      "nama": "Syazwan Archisoft",
+      "nickname": "SYAZWEINSTEIGER",
+      "no": 31,
+      "size": "M"
+    },
+    {
+      "nama": "Umarzuki",
+      "nickname": "UMAR",
+      "no": 33,
+      "size": "XL"
+    },
+    {
+      "nama": "Venkata Ramana.N",
+      "nickname": "VENKY",
+      "no": 2,
+      "size": "L"
+    },
+    {
+      "nama": "Waheed",
+      "nickname": "WHD",
+      "no": 91,
+      "size": "L"
+    },
+    {
+      "nama": "Yusri",
+      "nickname": "YUSRI",
+      "no": 13,
+      "size": "S"
+    },
+    {
+      "nama": "Zaki",
+      "nickname": "ZAKI",
+      "no": 78,
+      "size": "L"
+    },
+    {
+      "nama": "Zul Izzi",
+      "nickname": "2ULI22I",
+      "no": 69,
+      "size": "M"
+    }
+  ]
