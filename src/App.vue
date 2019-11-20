@@ -1,14 +1,25 @@
 <template>
-  <div id="app">
+  <div id="app" class="container h-100">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+        <Header />
     </div>
     <router-view/>
   </div>
 </template>
 
+<script>
+import Header from '@/components/Header'
+export default {
+  components: {
+    Header
+  }
+}
+</script>
+
 <style>
+body {
+  background-color: #eeeeee
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,7 +29,9 @@
 }
 
 #nav {
+  margin-top: 30px;
   padding: 30px;
+  font-size: 0.9rem
 }
 
 #nav a {
