@@ -12,6 +12,7 @@
             <form @submit.prevent="how_much">
               <br>
               <input
+                v-if="input_no != false"
                 type="text"
                 v-model="pick_no"
                 class="form-control text-center"
@@ -21,7 +22,7 @@
                 <br />
                 <transition name="slide-fade">
                 <div v-if="detail != null">
-                  <table class="table table-bordered">
+                  <table class="table table-bordered table-condensed">
                     <tbody>
                       <tr>
                         <th>Nama</th>
@@ -42,13 +43,16 @@
                     </tbody>
                   </table>
                 </div>
+
+                <div v-if="duplicates != null">
+
+                  <div class="alert alert-info text-left">Pick your name!</div>
+                  <ul v-for="(duplicate, index) in duplicates" :key="index" class=''>
+                    <li class='text-left' @click="pick_me(duplicate)">{{ duplicate.nama.toUpperCase() }}</li>
+                  </ul>
+                </div>
                 </transition>
-                <br />
-                <button
-                  v-if="btn_check == null"
-                  class="btn btn-primary btn-block"
-                  @click="how_much"
-                >Check</button>
+ 
 
                 <div class="btn-group btn-block" v-if="btn_check != null">
                   <div @click="search_again" class='btn btn-outline-primary'>Search Again</div>
@@ -60,6 +64,7 @@
                 >Proceed To Payment</button>
                 </div>
                 
+                <ToyyibPay :person="detail" v-if="payment_confirm == true" />
               </div>
             </form>
           </div>
@@ -71,24 +76,45 @@
 
 <script>
 import order_list_data from "@/data/order-list.json";
+import ToyyibPay from '@/components/payment_gateway/ToyyibPay'
 export default {
+  components:{
+    ToyyibPay
+  },
   data: function() {
     return {
+      input_no: true,
       pick_no: null,
       detail: null,
       btn_check: null,
-      payment_uri: null
+      payment_uri: null,
+      duplicates: null,
+      payment_confirm: false
     };
   },
   methods: {
-    how_much: function() {
-      this.detail = null;
-      let arr = order_list_data;
-      let obj = arr.find(o => o.no === parseInt(this.pick_no));
-      if (obj != 0) {
-        this.detail = obj;
+    more_than_one: function(payloads){
+      this.duplicates = payloads
+    },
+    view_picker_info: function(info){
+        this.detail = info;
         this.url_payment(this.detail.size);
         this.btn_check = "payment";
+    },
+    how_much: function() {
+      this.detail = null;
+      this.payment_confirm = false
+      let arr = order_list_data;
+      let jumpa = []
+      for(let i = 0; i<arr.length; i++){
+        if(arr[i].no == parseInt(this.pick_no)){
+          jumpa.push(arr[i])
+        }
+      }
+      if(jumpa.length>1){
+        this.more_than_one(jumpa)
+      } else {
+        this.view_picker_info(jumpa[0])
       }
     },
     url_payment: function(size_baju) {
@@ -113,11 +139,20 @@ export default {
       this.payment_uri = uri_path;
     },
     go_to_payment: function() {
-      window.location.href = this.payment_uri;
+      // window.location.href = this.payment_uri;
+      this.btn_check = null
+      this.payment_confirm = true
+      this.input_no = false
     },
     search_again: function(){
       this.detail = null
       this.pick_no = null
+      this.payment_uri = null
+      this.btn_check = null
+    },
+    pick_me: function(me){
+      this.duplicates = null
+      this.view_picker_info(me)
     }
   }
 };
