@@ -1,7 +1,7 @@
 <template>
   <div>
     <form>
-        {{ errors}}
+        {{ errors }}
       <div>
         <input
           type="text"
@@ -73,25 +73,17 @@ export default {
             this.person['email'] = this.email  
             this.person['phone_no'] = this.phone_no          
             let buyer_payloads = {
-                userSecretKey           : "ejhh3dwb-ty9q-3h6s-apt8-cn6xmcad0df7",
                 categoryCode            : "3i32cume",
                 billName                : "JERSEY FUTSAL CDC HELANG",
                 billDescription         : "JERSEY FUTSAL CDC HELANG",
-                billPriceSetting        : 1,
-                billPayorInfo           : 1,
-                billAmount              : 3700,
-                billReturnUrl           : "https://cdc.onewoorks-solutions.com",
-                billCallbackUrl         : 'https://cdc.onewoorks-solutions.com/paystatus',
-                billExternalReferenceNo : this.person.ref_no,
+                billExternalReferenceNo : this.person.ref_key,
                 billTo                  : this.person.nama,
                 billEmail               : this.person.email,
-                billPhone               : this.person.phone_no,
-                billSplitPayment        : 0,
-                billSplitPaymentArgs    : "",
-                billPaymentChannel      : 0
+                billPhone               : this.person.phone_no
             }
-            Axios.post('https://onewoorks-solutions.com/api/payment_gateway/toyyibpay.php', JSON.stringify(buyer_payloads))
+            Axios.post('https://api.onewoorks-solutions.com/payment_gateway/toyyibpay/create', JSON.stringify(buyer_payloads))
             .then(response => {
+                this.errors = null
                 window.location.href="https://toyyibpay.com/" + response.data
             })
         }

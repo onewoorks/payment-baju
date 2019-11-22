@@ -9,8 +9,11 @@
             </figure>
           </div>
           <div class="col-lg-6 mx-auto contentnya">
+            <figure>
+              <img src='../assets/toyyibpay.png' class='img-fluid' alt="onewoorks-toyyibpay" v-if="payment_confirm == true"  />
+            </figure>
+            
             <form @submit.prevent="how_much">
-              <br>
               <input
                 v-if="input_no != false"
                 type="text"
@@ -22,38 +25,41 @@
                 <br />
                 <transition name="slide-fade">
                 <div v-if="detail != null">
-                  <table class="table table-bordered table-condensed">
+                  <table class="table table-bordered table-sm">
                     <tbody>
                       <tr>
-                        <th>Nama</th>
+                        <th scope="col">Nama</th>
                         <td>{{ detail.nama.toUpperCase() }}</td>
                       </tr>
                       <tr>
-                        <th>NickName</th>
+                        <th scope="col">NickName</th>
                         <td>{{ detail.nickname }}</td>
                       </tr>
                       <tr>
-                        <th>No</th>
+                        <th scope="col">No</th>
                         <td>{{ detail.no}}</td>
                       </tr>
                       <tr>
-                        <th>Saiz Baju</th>
+                        <th scope="col">Saiz Baju</th>
                         <td>{{ detail.size }}</td>
+                      </tr>
+                      <tr v-if="payment_detail != null">
+                        <th scope="col">Payment Status</th>
+                        <td>{{ payment_detail.toUpperCase() }}</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
 
                 <div v-if="duplicates != null">
-
                   <div class="alert alert-info text-left">Pick your name!</div>
                   <ul v-for="(duplicate, index) in duplicates" :key="index" class=''>
                     <li class='text-left' @click="pick_me(duplicate)">{{ duplicate.nama.toUpperCase() }}</li>
                   </ul>
                 </div>
                 </transition>
- 
 
+                <div v-if="btn_check == null && payment_confirm == false " @click="how_much" class="btn btn-block btn-primary">Search</div>
                 <div class="btn-group btn-block" v-if="btn_check != null">
                   <div @click="search_again" class='btn btn-outline-primary'>Search Again</div>
                   <button
@@ -61,6 +67,12 @@
                   v-if="btn_check == 'payment'"
                   class="btn btn-success"
                   @click="go_to_payment"
+                >Proceed To Payment</button>
+                <button
+                type="button"
+                  v-if="btn_check == 'toyyibpay'"
+                  class="btn btn-success"
+                  @click="go_to_toyyibpay"
                 >Proceed To Payment</button>
                 </div>
                 
@@ -75,6 +87,8 @@
 </template>
 
 <script>
+
+import Axios from 'axios'
 import order_list_data from "@/data/order-list.json";
 import ToyyibPay from '@/components/payment_gateway/ToyyibPay'
 export default {
@@ -89,17 +103,55 @@ export default {
       btn_check: null,
       payment_uri: null,
       duplicates: null,
-      payment_confirm: false
+      payment_confirm: false,
+      payment_detail: null,
+      toyyib_code: null
     };
   },
+  watch: {
+    pick_no: function(){
+      this.detail = null
+      this.btn_check = null
+      this.payment_uri = null
+      this.duplicates = null
+      this.payment_confirm = false
+      this.payment_detail = null
+      this.toyyib_code = null
+    }
+  },
   methods: {
+    go_to_toyyibpay: function(){
+        window.location.href = `https://toyyibpay.com/${this.toyyib_code}`
+    },
+    check_ref: function(response){
+      if (response.length > 0){
+          this.payment_detail = response[0].payment_status
+          this.toyyib_code = response[0].payment_ref
+          if (response[0].status == 1){
+            this.btn_check = "completed"
+            this.payment_confirm = false
+          } else {
+            this.btn_check = 'toyyibpay'
+          }
+          
+      } else {
+        this.btn_check = "payment";
+        this.payment_detail = null
+      }
+    },
     more_than_one: function(payloads){
       this.duplicates = payloads
     },
     view_picker_info: function(info){
-        this.detail = info;
-        this.url_payment(this.detail.size);
-        this.btn_check = "payment";
+      if (typeof info !== "undefined"){
+this.detail = info;
+        
+        Axios.get(`https://api.onewoorks-solutions.com/payment_gateway/toyyibpay/find?refid=${this.detail.ref_key}`)
+        .then(response => {
+          this.check_ref(response.data)
+        })
+      }
+        
     },
     how_much: function() {
       this.detail = null;
@@ -139,7 +191,6 @@ export default {
       this.payment_uri = uri_path;
     },
     go_to_payment: function() {
-      // window.location.href = this.payment_uri;
       this.btn_check = null
       this.payment_confirm = true
       this.input_no = false

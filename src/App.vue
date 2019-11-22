@@ -4,6 +4,9 @@
         <Header />
     </div>
     <router-view/>
+    <figure>
+      <img src="@/assets/sponsor.png" alt="" style="margin-top:15px" />
+    </figure>
   </div>
 </template>
 
