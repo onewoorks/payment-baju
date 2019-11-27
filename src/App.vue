@@ -4,8 +4,10 @@
         <Header />
     </div>
     <router-view/>
+    
     <figure>
-      <img src="@/assets/sponsor.png" alt="" style="margin-top:15px" />
+      <div class="text-align"  style="margin-top:15px; margin-left:-180px;font-size:0.8rem"><i>sponsored by :</i></div>
+      <img class='img-fluid' src="@/assets/sponsor.png" alt="onewoorks and vireserve and iqbal fikri" />
     </figure>
   </div>
 </template>
@@ -21,7 +23,7 @@ export default {
 
 <style>
 body {
-  background-color: #eeeeee
+  background-color: #eeeeee;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -32,7 +34,6 @@ body {
 }
 
 #nav {
-  margin-top: 30px;
   padding: 30px;
   font-size: 0.9rem
 }

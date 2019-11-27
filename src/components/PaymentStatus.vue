@@ -10,19 +10,21 @@
           </div>
           <div class="col-lg-6">
             <figure>
+              <a rel="noopener noreferrer" href="https://toyyibpay.com/e/143251051126981" target="_blank">
               <img src="../assets/toyyibpay.png" class="img-fluid" alt="onewoorks-toyyibpay" />
+              </a>
             </figure>
 
-            <div>
-                <div v-if="payment_status.status_id == 3" class="alert alert-danger">
+            <div v-if="payment_status != null">  
+                <div v-if="payment_status.billpaymentStatus == 3" class="alert alert-danger">
                     Payment not success, Please try again
                 </div>
 
-                <div v-if="payment_status.status_id == 1" class="alert alert-success">
+                <div v-if="payment_status.billpaymentStatus == 1" class="alert alert-success">
                     Payment Success, Thank you
                 </div>
 
-                <div v-if="payment_status.status_id ==2" class="alert alert-warning">
+                <div v-if="payment_status.billpaymentStatus == 2" class="alert alert-warning">
                     Pending payment, please check again.
                 </div>
 
@@ -32,7 +34,7 @@
                     <tbody>
                       <tr>
                         <th scope="col">Transaction Code</th>
-                        <td class="text-center">{{ payment_status.transaction_id}}</td>
+                        <td class="text-center">{{ payment_status.billpaymentInvoiceNo}}</td>
                       </tr>
                       <tr>
                         <th scope="col">Payment Status</th>
@@ -40,18 +42,18 @@
                       </tr>
                       <tr>
                         <th scope="col">Bill Code</th>
-                        <td>{{ payment_status.billcode }}</td>
+                        <td>{{ payment_status.billPermalink }}</td>
                       </tr>
                       <tr>
                         <th scope="col">Order Id</th>
-                        <td>{{ payment_status.order_id}}</td>
+                        <td>{{ $route.query.order_id }}</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </transition>
 
-              <div @click="go_to_payment" v-if="payment_status.status_id == 3" class='btn btn-block btn-primary'>
+              <div @click="go_to_payment" v-if="payment_status.billpaymentStatus == 3" class='btn btn-block btn-primary'>
                   Try Again
               </div>
             </div>
@@ -73,11 +75,12 @@ export default {
     };
   },
   mounted: function() {
-      this.payment_status = this.$route.query;
-      Axios.post('https://api.onewoorks-solutions.com/payment_gateway/toyyibpay/transaction', this.payment_status )
+      Axios.post('https://api.onewoorks-solutions.com/payment_gateway/toyyibpay/transaction', this.$route.query )
       .then(response => {
+          let actual = response.data
+          this.payment_status = actual;
           let status_name = ""
-          switch(this.payment_status.status_id){
+          switch(actual.billpaymentStatus){
               case "1":
                   status_name = "Payment Completed"
                   break;
